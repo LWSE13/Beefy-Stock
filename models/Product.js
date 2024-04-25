@@ -49,7 +49,16 @@ Product.init(
         key: 'id'
       
       }
-    }
+    },
+
+    supplierId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+          model: Supplier,
+          key: 'id'
+      }
+  }
   },
   {
     sequelize,
