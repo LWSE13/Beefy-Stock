@@ -27,7 +27,7 @@ Supplier.init(
     },
 
     supplier_phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
@@ -35,7 +35,7 @@ Supplier.init(
       type: DataTypes.STRING,
       allowNull: false
     }
-
+    
     // future fields could include assosiated products in which the user could see all the products that the supplier provides.
   },
   {
@@ -43,7 +43,7 @@ Supplier.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'supplier',
   }
 );
 

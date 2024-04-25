@@ -1,6 +1,6 @@
 
 const { Model, DataTypes } = require('sequelize');
-
+const Supplier = require('./Supplier'); 
 const sequelize = require('../config/connection');
 
 
@@ -51,11 +51,11 @@ Product.init(
       }
     },
 
-    supplierId: {
+    supplier_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-          model: Supplier,
+          model: 'supplier',
           key: 'id'
       }
   }
