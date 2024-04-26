@@ -44,6 +44,7 @@ Product.init(
 
     category_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'category',
         key: 'id'
@@ -53,7 +54,7 @@ Product.init(
 
     supplier_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
           model: 'supplier',
           key: 'id'

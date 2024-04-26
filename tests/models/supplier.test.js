@@ -23,6 +23,9 @@ describe('Supplier model', () => {
     const supplier = await Supplier.findOne({ where: { supplier_name: 'Test Supplier' } });
     
     expect(supplier.supplier_name).toBe('Test Supplier');
+    expect(supplier.supplier_address).toBe('123 Test Street, Test City, Test Country');
+    expect(supplier.supplier_phone).toBe('+1 123 456 7890');
+    expect(supplier.supplier_email).toBe('test.supplier@example.com')
   });
 
 
