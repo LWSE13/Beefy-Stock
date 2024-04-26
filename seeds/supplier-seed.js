@@ -1,6 +1,6 @@
 const { Supplier } = require('../models');
 
-// Define sample supplier data
+
 const suppliersData = [
     
       {
@@ -95,7 +95,7 @@ const suppliersData = [
       },
 ];
 
-// Define a function to seed the database with suppliers
+
 const seedSuppliers = async () => {
   await Supplier.bulkCreate(suppliersData);
 };

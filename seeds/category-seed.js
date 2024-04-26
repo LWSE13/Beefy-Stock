@@ -1,6 +1,6 @@
 const { Category } = require('../models');
 
-// Define sample category data
+
 const categoriesData = [
   {
     
@@ -28,10 +28,10 @@ const categoriesData = [
   }
 ];
 
-// Define a function to seed the database with categories
+
 const seedCategories = async () => {
   await Category.bulkCreate(categoriesData);
 };
 
-// Export the seed function
+
 module.exports = seedCategories;

@@ -1,6 +1,6 @@
 const { Product } = require('../models');
 
-// Define sample product data
+
 const productsData = [
   
     {
@@ -126,7 +126,7 @@ const productsData = [
 
 ];
 
-// Define a function to seed the database with products
+
 const seedProducts = async () => {
   await Product.bulkCreate(productsData);
 };
