@@ -16,4 +16,25 @@ describe('Category model', () => {
 
         expect(category.category_name).toBe('Test Category');
     })
+
+    it ('should update a category', async () => {
+        const category = await Category.findOne({ where: { category_name: 'Test Category' } });
+
+        category.category_name = 'New Category';
+        await category.save();
+
+        const updatedCategory = await Category.findOne({ where: { category_name: 'New Category' } });
+
+        expect(updatedCategory.category_name).toBe('New Category');
+    })
+
+    it ('should delete a category', async () => {
+        const category = await Category.findOne({ where: { category_name: 'New Category' } });
+
+        await category.destroy();
+
+        const deletedCategory = await Category.findOne({ where: { category_name: 'New Category' } });
+
+        expect(deletedCategory).toBeNull();
+    })
 })
