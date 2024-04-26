@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Product, Category } = require('../../models');
+const { Product, Category, Supplier } = require('../../models');
 
 // The `/api/products` endpoint
 
@@ -13,12 +13,15 @@ router.get('/', async (req, res) => {
           attributes: ["category_name"]
         },
 
-        // include supplier model, attributes we need are supplier_name
+        {
+          model: Supplier,
+          attributes: ["supplier_name"]
+        }
       ]
     });
     res.status(200).json(productData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({message: 'an error occured while fetching the data', error: err.message});
   }
 });
 
