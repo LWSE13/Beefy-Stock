@@ -13,68 +13,77 @@ router.get('/', async (req, res) => {
     });
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({message: 'An error occurred while fetching categories', error: err.message});
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
-    const CategoryData = await Category.findByPk(req.params.id, {
+    const categoryData = await Category.findByPk(req.params.id, {
       include: {
         model: Product,
         attributes: ['product_name']
       }
     });
-    res.status(200).json(CategoryData);
+    if (!categoryData) {
+      res.status(404).json({ message: 'No category found with this id!' });
+      return;
+    }
+    res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err)
+    console.error(err);
+    res.status(500).json({message: 'An error occurred while fetching the category', error: err.message});
   }
 });
 
 router.post('/', async (req, res) => {
   try {
-    const CategoryData = await Category.create({
+    const categoryData = await Category.create({
       category_name: req.body.category_name
     });
-    res.status(200).json({ message: 'Data successfully written', CategoryData, });
-  }catch (err) {
-    res.status(500).json(err);
+    res.status(200).json({ message: 'Data successfully written', categoryData });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({message: 'An error occurred while creating the category', error: err.message});
   }
 });
 
 router.put('/:id', async (req, res) => {
   try {
-    const CategoryData = await Category.update(req.body, {
+    const categoryData = await Category.update(req.body, {
       where: {
         id: req.params.id
       }
     });
-    if (!CategoryData[0]) {
-      res.status(404).json({ message: 'No tag found with this id!' });
+    if (!categoryData[0]) {
+      res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
-    res.status(200).json({ message: 'Data successfully updated', CategoryData, });
+    res.status(200).json({ message: 'Data successfully updated', categoryData });
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({message: 'An error occurred while updating the category', error: err.message});
   }
 });
 
 router.delete('/:id', async (req, res) => {
   try {
-    const CategoryData = await Category.destroy({
+    const categoryData = await Category.destroy({
       where: {
         id: req.params.id
       }
     });
 
-    if (!CategoryData) {
-      res.status(404).json({ message: 'No tag found with this id!' });
+    if (!categoryData) {
+      res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
 
-    res.status(200).json({ message: 'Data successfully deleted', CategoryData, });
+    res.status(200).json({ message: 'Data successfully deleted', categoryData });
   } catch (err) {
-    res.status(500).json({message: 'the data could not be deleted', error: err,});
+    console.error(err);
+    res.status(500).json({message: 'An error occurred while deleting the category', error: err.message});
   }
 });
 
