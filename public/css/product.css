@@ -1,0 +1,126 @@
+header {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center; /* Align items vertically in the center */
+    background-color: #D2B48C; /* Tan background color */
+    padding: 15px;
+}
+
+img {
+    width: 100px; /* Set the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.header-login {
+    display: flex;
+    padding: 20px;
+}
+
+button {
+    margin-right: 10px;
+    background-color: #8B4513; /* Dark brown button background */
+    color: #fff; /* White button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button button:hover {
+    background-color: #A0522D; /* Medium brown on hover */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light gray background */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Reduced height to leave some space at the top and bottom */
+    margin: 20px; /* Add space between header and container */
+    background-color: #F5DEB3; /* Light brown background color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the container */
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex: 1;
+}
+
+.image-container img {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 0 20px;
+    background-color: #fff; /* White background for text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    height: 100%;
+    width: 50%;
+
+}
+
+
+.text-container h2 {
+    color: #8B4513; /* Dark brown heading color */
+    font-size: 50px;
+}
+
+.text-container p {
+    color: #A0522D; /* Medium brown text color */
+    font-size: 30px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
+    background-color: #8B4513; /* Dark brown button background */
+    color: #fff; /* White button text color */
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.button-container button:hover {
+    background-color: #A0522D; /* Medium brown on hover */
+}
+footer {
+    background-color: #D2B48C; /* Tan background color */
+    color: #fff; /* White text color */
+    padding: 20px; /* Padding for inner content */
+}
+
+.useful-fields ul li a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.useful-fields ul li a:hover {
+    color: #988261; /* Lighter tan color on hover */
+}
