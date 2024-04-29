@@ -1,4 +1,3 @@
-
 const Product = require('./Product');
 const Category = require('./Category');
 const Supplier = require('./Supplier');
