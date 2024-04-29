@@ -31,7 +31,11 @@ describe('Category model', () => {
     it ('should delete a category', async () => {
         const category = await Category.findOne({ where: { category_name: 'New Category' } });
 
-        await category.destroy();
+        if (category) {
+            await category.destroy();
+        } else {
+            throw new Error('No category found to delete');
+        }
 
         const deletedCategory = await Category.findOne({ where: { category_name: 'New Category' } });
 
