@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-  router.get('/search', async (req, res) => {
+  router.get('/search', withAuth, async (req, res) => {
     const searchQuery = req.query.productSearch;
     const products = await Product.findAll({
         where: {
@@ -29,5 +29,20 @@ router.get('/', (req, res) => {
     });
     res.render('search', { products: products.map(product => product.get({ plain: true })) });
   });
+
+  //get product by id (for use when clicking on a product in the search results)
+  router.get('/products/:id', withAuth, async (req, res) => {
+    try {
+        const product = await Product.findByPk(req.params.id);
+        if (product) {
+            res.render('products', { product: product.get({ plain: true }) });
+        } else {
+            res.status(404).send('Product not found');
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Something went wrong!');
+    }
+});
 
   module.exports = router;

@@ -5,7 +5,6 @@ const supplierRoutes = require('./supplier-routes');
 const userRoutes = require('./user-routes');
 
 router.use('/categories', categoryRoutes);
-console.log("hello");
 router.use('/products', productRoutes);
 router.use('/supplier', supplierRoutes);
 router.use('/users', userRoutes);
