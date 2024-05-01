@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beefy Stock</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="/public/css/product.css"/>
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
             <img src="/public/images/logo_img.png" alt="beefy stock logo">
             <img src="/public/images/file.png" alt="Beefy stock">
         </div>
-        <input type="text" class="prompt-input" placeholder="Search..." required>
+        <input type="text" class="prompt-input" placeholder="Search...">
         <div class="header-login">
             <button class="login">Sign In</button>
             <button class="signup">Sign Up</button>
@@ -21,7 +21,7 @@
     <div class="container">
     <div class="row-1">
         <div class="product-image-1">
-            <img src="..." alt="">
+            <h2>{{product-details}}</h2>
         </div>
         <div class="supplier">
             <button class="button">Suppliers</button>
@@ -30,10 +30,10 @@
     </div>
         <div class="row-2">
             <div>
-                <img class="product-details" src="..." alt="product-details">
+                <img class="{{product-img}}" src="..." alt="{{product-image}}">
             </div>
         
-            <div class="description">description</div>
+            <div class="description">{{description}}</div>
         </div>
     </div>
 </body>
