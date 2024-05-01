@@ -24,7 +24,14 @@
             <h2>{{product-details}}</h2>
         </div>
         <div class="supplier">
-            <button class="button">Suppliers</button>
+            <button id="modal-id" class="button">Suppliers</button>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn">&times;</span>
+                    <p>Coming soon...</p>
+                </div>
+            </div>
             <button class="button">Edit Details</button>
         </div>
     </div>
@@ -52,5 +59,6 @@
         </div>
     </div>
 </footer>
+<script src="/Beefy-Stock/models/Product.js"></script>
 
 </html>
