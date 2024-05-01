@@ -11,7 +11,7 @@ const app = express();
 
 // Set up session middleware
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   cookie: {
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
   },
