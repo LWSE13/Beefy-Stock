@@ -57,36 +57,62 @@ body, html {
     padding: 20px; /* Add padding inside the container */
 }
 
-.product-image-1 {
+.row-1 {
     width: 45%;
     height: 90%;
     padding: 10px;
     border-radius: 15px;
     outline: auto !important;
 }
+.product-image-1 {
+    width: 95%;
+    height: 50%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    outline: auto !important;
+}
 
-.desc-container {
+.supplier {
+    width: 95%;
+    height: 30%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 15px;
+    outline: auto !important;
+}
+
+.supplier button {
+    display: flex;
+    margin: 10px auto;
+}
+
+.row-2 {
     width: 50%;
     height: 90%;
     padding: 10px;
     border-radius: 15px;
-    
+    margin: 10px;
     outline: auto !important;
 }
 
-.desc-container .product-details {
+.row-2 .product-details {
     width: 45%;
     height: 30%;
     padding: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    margin: 10px auto;
     outline: auto !important;
 }
 
-.desc-container .description {
+.row-2 .description {
     width: 50%;
     height: 30%;
     padding: 10px;
     text-align: center;
+    display: flex;
+    margin: 10px auto;
     outline: auto !important;
 }
 
