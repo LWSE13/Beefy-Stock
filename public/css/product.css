@@ -11,6 +11,15 @@ img {
     height: auto; /* Maintain the aspect ratio */
 }
 
+.prompt-input {
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 17px;
+}
+
 .header-login {
     display: flex;
     padding: 20px;
@@ -39,7 +48,7 @@ body, html {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 90vh; /* Reduced height to leave some space at the top and bottom */
     margin: 20px; /* Add space between header and container */
@@ -48,19 +57,37 @@ body, html {
     padding: 20px; /* Add padding inside the container */
 }
 
-
-
-.image-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex: 1;
+.product-image-1 {
+    width: 45%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    outline: auto !important;
 }
 
-.image-container img {
-    width: 400px;
-    height: auto;
+.desc-container {
+    width: 50%;
+    height: 90%;
+    padding: 10px;
     border-radius: 15px;
+    
+    outline: auto !important;
+}
+
+.desc-container .product-details {
+    width: 45%;
+    height: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: auto !important;
+}
+
+.desc-container .description {
+    width: 50%;
+    height: 30%;
+    padding: 10px;
+    text-align: center;
+    outline: auto !important;
 }
 
 .text-container {
