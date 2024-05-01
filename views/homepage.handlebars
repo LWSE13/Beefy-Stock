@@ -3,7 +3,15 @@
     <div class="container">
        
         <div class="text-container">
-            
+    {{#if loggedIn}}
+        <div>
+            <input type="text" placeholder="Search...">
+            <button onclick="window.location.href='/products'">View Products</button>
+            <button onclick="window.location.href='/suppliers'">View Suppliers</button>
+            <button onclick="window.location.href='/payments'">search </button>
+
+        </div>
+    {{else}}
             <h2>Welcome to Beefy Stock</h2>
             <p>Keep track of stock levels with Beefy Stock's inventory control system, which populates invoices and orders with items you buy and sell.</p>
             <div class="button-container">
@@ -12,7 +20,7 @@
                 </a>
                 <button class="signup">Sign Up</button>
             </div>
-        
+     {{/if}}    
         </div>
         <div class="image-container">
             <img src="/images/img-2_720.png" alt="Image">
