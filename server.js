@@ -8,6 +8,7 @@ const routes = require('./controller');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+console.log(process.env.SESSION_SECRET)
 
 // Set up session middleware
 const sess = {
