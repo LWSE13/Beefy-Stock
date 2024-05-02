@@ -11,6 +11,11 @@ img {
     height: auto; /* Maintain the aspect ratio */
 }
 
+a {
+    text-decoration: none; /* Remove underline from links */
+
+}
+
 .header-login {
     display: flex;
     padding: 20px;
