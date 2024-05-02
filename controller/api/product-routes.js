@@ -1,30 +1,35 @@
 const router = require('express').Router();
 const { Product, Category, Supplier } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/products` endpoint
 
 // get all products
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    console.log("hello");
-    const productData = await Product.findAll({
-      include: [
-        {
-          model: Category,
-          attributes: ["category_name"]
-        },
-        {
-          model: Supplier,
-          attributes: ["supplier_name"]
-        }
-      ]
-    });
+    
+      // Fetch all products
+      productData = await Product.findAll({
+        include: [
+          {
+            model: Category,
+            attributes: ["category_name"]
+          },
+          {
+            model: Supplier,
+            attributes: ["supplier_name"]
+          }
+        ]
+      });      
+    
+
     res.status(200).json(productData);
   } catch (err) {
     console.error(err);
     res.status(500).json({message: 'An error occurred while fetching products', error: err.message});
   }
 });
+
 
 router.get('/:id', async (req, res) => {
   try {
