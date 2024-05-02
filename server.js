@@ -8,12 +8,13 @@ const routes = require('./controller');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+console.log(process.env.SESSION_SECRET)
 
 // Set up session middleware
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   cookie: {
-    maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    maxAge:  60 * 60 * 1000, // 1 hour
   },
   resave: false,
   saveUninitialized: true,

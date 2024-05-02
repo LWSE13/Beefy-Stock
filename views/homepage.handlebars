@@ -5,10 +5,10 @@
         <div class="text-container">
     {{#if loggedIn}}
         <div>
-            <input type="text" placeholder="Search...">
-            <button onclick="window.location.href='/products'">View Products</button>
-            <button onclick="window.location.href='/suppliers'">View Suppliers</button>
-            <button onclick="window.location.href='/payments'">search </button>
+<form action="/search" method="GET">
+    <input type="text" name="productSearch" placeholder="Search products">
+    <button type="submit">Search</button>
+</form>
 
         </div>
     {{else}}
