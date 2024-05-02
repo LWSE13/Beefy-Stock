@@ -1,19 +1,17 @@
-header {
-    display: flex;
-    justify-content: space-between; /* Distribute items evenly along the main axis */
-    align-items: center; /* Align items vertically in the center */
-    background-color: #D2B48C; /* Tan background color */
-    padding: 15px;
-}
+
 
 img {
     width: 100px; /* Set the width of the image */
     height: auto; /* Maintain the aspect ratio */
 }
 
-a {
-    text-decoration: none; /* Remove underline from links */
-
+.prompt-input {
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 17px;
 }
 
 .header-login {
@@ -44,7 +42,7 @@ body, html {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 90vh; /* Reduced height to leave some space at the top and bottom */
     margin: 20px; /* Add space between header and container */
@@ -53,19 +51,94 @@ body, html {
     padding: 20px; /* Add padding inside the container */
 }
 
-
-
-.image-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex: 1;
+.row-1 {
+    width: 45%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    outline: auto !important;
+}
+.product-image-1 {
+    width: 95%;
+    height: 50%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    outline: auto !important;
 }
 
-.image-container img {
-    width: 400px;
-    height: auto;
+.supplier {
+    width: 95%;
+    height: 30%;
+    padding: 10px;
+    margin: auto;
     border-radius: 15px;
+    outline: auto !important;
+}
+
+.supplier button {
+    display: flex;
+    margin: 10px auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 20% auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 black;
+}
+
+.closeBtn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+}
+
+.closeBtn:hover,.closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.row-2 {
+    width: 50%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px;
+    outline: auto !important;
+}
+
+.row-2 .product-details {
+    width: 45%;
+    height: 30%;
+    padding: 10px;
+    display: flex;
+    margin: 10px auto;
+    outline: auto !important;
+}
+
+.row-2 .description {
+    width: 50%;
+    height: 30%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    margin: 10px auto;
+    outline: auto !important;
 }
 
 .text-container {
@@ -111,11 +184,7 @@ body, html {
 .button-container button:hover {
     background-color: #A0522D; /* Medium brown on hover */
 }
-footer {
-    background-color: #D2B48C; /* Tan background color */
-    color: #fff; /* White text color */
-    padding: 20px; /* Padding for inner content */
-}
+
 
 .useful-fields ul li a {
     color: #fff; /* White text color for links */
@@ -129,65 +198,3 @@ ul{
 .useful-fields ul li a:hover {
     color: #988261; /* Lighter tan color on hover */
 }
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-  .col-md-6 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    background-color: #F5DEB3; /* Light gray background */
-    border-radius: 10px; /* Rounded corners */
-    margin: 30px 25px;
-  }
-  
-  
-  
-  .form {
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    background-color: #fff;
-    height: 50vh;
-    padding: 30px 35px;
-}
-  h2{
-    color: #A0522D;
-  }
-  .form h2 {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-  }
-  
-  .form-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .btn-primary {
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
- 
-  

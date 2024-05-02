@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
   
   res.render('homepage', { loggedIn, name }); // Pass the loggedIn and name variables to the template
 });
+
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
@@ -18,16 +19,38 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-  router.get('/search', async (req, res) => {
+  router.get('/search', withAuth, async (req, res) => {
     const searchQuery = req.query.productSearch;
     const products = await Product.findAll({
-        where: {
-          product_name: {
-                [Op.iLike]: '%' + searchQuery + '%'
-            }
+      where: {
+        product_name: {
+          [Op.iLike]: '%' + searchQuery + '%'
         }
+      }
     });
-    res.render('search', { products: products.map(product => product.get({ plain: true })) });
+    res.render('search', { 
+      products: products.map(product => product.get({ plain: true })),
+      loggedIn: req.session.loggedIn,
+      name: req.session.name
+    });
+  });
+  
+  router.get('/products/:id', withAuth, async (req, res) => {
+    try {
+      const product = await Product.findByPk(req.params.id);
+      if (product) {
+        res.render('products', { 
+          product: product.get({ plain: true }),
+          loggedIn: req.session.loggedIn,
+          name: req.session.name
+        });
+      } else {
+        res.status(404).send('Product not found');
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Something went wrong!');
+    }
   });
 
   module.exports = router;

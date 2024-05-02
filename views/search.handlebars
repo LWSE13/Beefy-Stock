@@ -2,7 +2,9 @@
 
 {{#each products}}
     <div>
-        <h2>{{this.product_name}}</h2>
+        <a href="/products/{{this.id}}">
+            <h2 class = 'search_headings'>{{this.product_name}}</h2>
+        </a>
         <p>{{this.description}}</p>
     </div>
 {{/each}}
