@@ -4,11 +4,16 @@ const { Product } = require('../models');
 const { Op } = require('sequelize');
 
 router.get('/', (req, res) => {
-  const loggedIn = req.session.loggedIn || false; // Check if user is logged in
-  const name = req.session.name || ''; // Get the name from session or set it to an empty string
-  
-  res.render('homepage', { loggedIn, name }); // Pass the loggedIn and name variables to the template
+  if (req.session.loggedIn) {
+    // If user is logged in, render the dashboard
+    const name = req.session.name || ''; // Get the name from session or set it to an empty string
+    res.render('dashboard', { loggedIn: true, name });
+  } else {
+    // If user is not logged in, render the homepage
+    res.render('homepage', { loggedIn: false, name: '' }); // Pass loggedIn as false and an empty name
+  }
 });
+
 
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -19,7 +24,7 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-  router.get('/search', withAuth, async (req, res) => {
+  router.get('/search', async (req, res) => {
     const searchQuery = req.query.productSearch;
     const products = await Product.findAll({
       where: {
@@ -28,6 +33,7 @@ router.get('/', (req, res) => {
         }
       }
     });
+    console.log(products);
     res.render('search', { 
       products: products.map(product => product.get({ plain: true })),
       loggedIn: req.session.loggedIn,

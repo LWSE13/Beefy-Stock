@@ -2,8 +2,10 @@
 
     <div class="dashboard-container">
     <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input" id="search-input">
+        <form action="/search" method="GET">
+        <input type="text" placeholder="Search..." class="search-input" id="search-input" name="productSearch">
         <button class="search-btn" onclick="search()">Search</button>
+        </form>
     </div>
     <div class="button-container-dashboard">
     <button class="dashboard-btn" onclick="window.location.href='/api/products'">View all products</button>
