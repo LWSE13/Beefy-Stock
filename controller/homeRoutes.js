@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
           },
           {
             model: Supplier,
-            attributes: ['supplier_name', 'supplier_address', 'supplier_phone', 'supplier_email']
+            attributes: ['id','supplier_name', 'supplier_address', 'supplier_phone', 'supplier_email']
           }
         ]
       
@@ -63,6 +63,24 @@ router.get('/', (req, res) => {
     } catch (err) {
       console.error(err);
       res.status(500).send('Something went wrong!');
+    }
+  });
+
+  router.put('/api/suppliers/:id', withAuth, async (req, res) => {
+    try {
+      await Supplier.update({
+        supplier_name: req.body.supplierName,
+        supplier_email: req.body.supplierEmail,
+        supplier_phone: req.body.supplierPhone,
+        supplier_address: req.body.supplierAddress
+      }, {
+        where: { id: req.params.id }
+      });
+  
+      res.json({ message: 'Update successful' });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Something went wrong!' });
     }
   });
 
