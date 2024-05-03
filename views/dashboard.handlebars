@@ -8,15 +8,15 @@
         </form>
     </div>
     <div class="button-container-dashboard">
-    <button class="dashboard-btn" onclick="window.location.href='/api/products'">View all products</button>
-    <button class="dashboard-btn" onclick="window.location.href='/api/suppliers'">View all suppliers</button>
+    <button class="dashboard-btn" onclick="window.location.href='/products'">View all products</button>
+    <button class="dashboard-btn" onclick="window.location.href='/suppliers'">View all suppliers</button>
 </div>
 <div id="low-quantity-products-container" class="products-container">
     <h2>Low Quantity Products</h2>
     <ul>
         {{#each lowQuantityProducts}}
         <li>
-            <a class="product-name" href="/api/products/{{this.id}}">{{this.product_name}}</a>
+            {{this.product_name}}
             <span class="product-quantity">Quantity left: {{this.in_hand_stock}}</span>
             
         </li>

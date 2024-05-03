@@ -33,7 +33,7 @@ const fetchLowQuantityProducts = async () => {
     lowQuantityProducts.forEach(product => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
-          <a class="product-name" href="/api/products/${product.id}">${product.product_name}</a>
+          <a class="product-name" href="/products/${product.id}">${product.product_name}</a>
           <span class="product-quantity">Quantity left: ${product.in_hand_stock}</span>
          
         `;
