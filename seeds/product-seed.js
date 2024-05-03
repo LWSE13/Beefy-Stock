@@ -122,7 +122,8 @@ const productsData = [
         in_hand_stock: 30,
         category_id: 4,
         supplier_id: 15
-      }
+      },
+      
 
 ];
 

@@ -56,7 +56,7 @@ body, html {
     height: 90%;
     padding: 10px;
     border-radius: 15px;
-    outline: auto !important;
+
 }
 .product-image-1 {
     width: 95%;
@@ -65,7 +65,13 @@ body, html {
     margin: auto;
     margin-bottom: 10px;
     border-radius: 15px;
-    outline: auto !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url('/images/coming-soon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-color: white;
+      
 }
 
 .supplier {
@@ -74,7 +80,10 @@ body, html {
     padding: 10px;
     margin: auto;
     border-radius: 15px;
-    outline: auto !important;
+    outline: 2px solid grey;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .supplier button {
@@ -114,12 +123,14 @@ body, html {
 }
 
 .row-2 {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     height: 90%;
     padding: 10px;
     border-radius: 15px;
     margin: 10px;
-    outline: auto !important;
+   
 }
 
 .row-2 .product-details {
@@ -197,4 +208,34 @@ ul{
 
 .useful-fields ul li a:hover {
     color: #988261; /* Lighter tan color on hover */
+}
+
+.heading-indentation {
+    margin-left: 15px;
+}
+
+.decorative-line {
+    border-bottom: 1px solid #8B4513;
+    margin: 10px 0;
+}
+
+.main-product-headings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    margin-right: 60px;
+}
+
+.product-details-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.product-description {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }

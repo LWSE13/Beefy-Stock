@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Product } = require('../models');
+const { Product, Category, Supplier } = require('../models');
 const { Op } = require('sequelize');
 
 router.get('/', (req, res) => {
@@ -37,8 +37,21 @@ router.get('/', (req, res) => {
   
   router.get('/products/:id', withAuth, async (req, res) => {
     try {
-      const product = await Product.findByPk(req.params.id);
+      const product = await Product.findByPk(req.params.id, {
+        include: [
+          {
+            model: Category,
+            attributes: ['category_name']
+          },
+          {
+            model: Supplier,
+            attributes: ['supplier_name', 'supplier_address', 'supplier_phone', 'supplier_email']
+          }
+        ]
+      
+      });
       if (product) {
+        console.log(product.get({ plain: true }));
         res.render('products', { 
           product: product.get({ plain: true }),
           loggedIn: req.session.loggedIn,

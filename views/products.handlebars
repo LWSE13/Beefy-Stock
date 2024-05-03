@@ -1,23 +1,38 @@
-
-    <div class="container">
+<div class="container">
     <div class="row-1">
         <div class="product-image-1">
-            <h2>{{product-name}}</h2>
         </div>
         <div class="supplier">
-            <button id="modal-id" class="button">Suppliers</button>
-
-
-            <button class="button">Edit Details</button>
-        </div>
-    </div>
-        <div class="row-2">
-            <div>
-                <!-- image goes here eventually-->
+            <button class="button">Edit Supplier Details</button>
+            <div class="supplier-edit">       
+                <h4>Supplier: {{product.supplier.supplier_name}}</h4>
+                <h5 class="heading-indentation">Email: {{product.supplier.supplier_email}}</h5>
+                <h5 class="heading-indentation">Phone: {{product.supplier.supplier_phone}}</h5>
+                <h5 class="heading-indentation">Address: {{product.supplier.supplier_address}}</h5>
             </div>
-        
-            <div class="description">{{description}}</div>
         </div>
     </div>
+    <div class="row-2">
+        <div>
+        <div>
+            <div class="main-product-headings">
+                <h2>{{product.product_name}}</h2> 
+                <h2 class="price">£{{product.price}}</h2>
+            </div>
+            <div class="main-product-headings">
+            <h4 class="heading-indentation">Category:  <a href=""> {{product.category.category_name}} </a> </h4>
+            <h4 class="price">Stock Level: {{product.in_hand_stock}}</h4>
+            </div>
+        </div>
+        <div class="decorative-line"></div>
+        <div class="product-description">
+            {{product.description}}
+        </div>
+        </div>
+        <div class="product-details-btn">
+            <button class="button">Edit Product Details</button>
+        </div>
+    </div>
+</div>
 
 
