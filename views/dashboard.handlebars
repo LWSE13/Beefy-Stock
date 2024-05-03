@@ -1,0 +1,36 @@
+<body>
+
+    <div class="dashboard-container">
+    <div class="search-container">
+        <form action="/search" method="GET">
+        <input type="text" placeholder="Search..." class="search-input" id="search-input" name="productSearch">
+        <button class="search-btn" onclick="search()">Search</button>
+        </form>
+    </div>
+    <div class="button-container-dashboard">
+    <button class="dashboard-btn" onclick="window.location.href='/api/products'">View all products</button>
+    <button class="dashboard-btn" onclick="window.location.href='/api/suppliers'">View all suppliers</button>
+</div>
+<div id="low-quantity-products-container" class="products-container">
+    <h2>Low Quantity Products</h2>
+    <ul>
+        {{#each lowQuantityProducts}}
+        <li>
+            <a class="product-name" href="/api/products/{{this.id}}">{{this.product_name}}</a>
+            <span class="product-quantity">Quantity left: {{this.in_hand_stock}}</span>
+            
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div class="chart-container">
+    <h2> Product Charts</h2>
+    <div class="chart">
+
+    </div>
+</div>
+</div>
+  
+    <script src="/js/dashboard.js"></script>
+</body>
