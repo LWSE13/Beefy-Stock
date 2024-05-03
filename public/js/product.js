@@ -108,4 +108,4 @@ $(document).ready(function() {
           console.error('Error:', error);
         });
       });
-  }); hi
+  }); 
