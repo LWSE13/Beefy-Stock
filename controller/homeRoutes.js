@@ -84,4 +84,22 @@ router.get('/', (req, res) => {
     }
   });
 
+  router.put('/api/products/:id', withAuth, async (req, res) => {
+    try {
+      await Product.update({
+        product_name: req.body.productName,
+        description: req.body.productDescription,
+        price: req.body.productPrice,
+        in_hand_stock: req.body.inHandStock,
+      }, {
+        where: { id: req.params.id }
+      });
+  
+      res.json({ message: 'Update successful' });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Something went wrong!' });
+    }
+  });
+
   module.exports = router;

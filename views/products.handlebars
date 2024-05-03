@@ -3,7 +3,7 @@
         <div class="product-image-1">
         </div>
         <div class="supplier">
-            <button class="button">Edit Supplier Details</button>
+            <button id="editSupplierButton" class="button">Edit Supplier Details</button>
             <div class="supplier-edit">       
                 <h4>Supplier: {{product.supplier.supplier_name}}</h4>
                 <h5 class="heading-indentation">Email: {{product.supplier.supplier_email}}</h5>
@@ -30,7 +30,7 @@
         </div>
         </div>
         <div class="product-details-btn">
-            <button class="button">Edit Product Details</button>
+            <button id="editProductButton" class="button">Edit Product Details</button>
         </div>
     </div>
 </div>
@@ -53,6 +53,33 @@
       <input type="text" id="supplierAddress" name="supplierAddress" value="{{product.supplier.supplier_address}}">
 
       <input type="hidden" id="supplierId" name="supplierName "value={{product.supplier.id}}> 
+
+      <button type="submit">Save</button>
+    </form>
+
+  </div>
+</div>
+
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <form id="productForm">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" value="{{product.product_name}}">
+
+      <label for="productDescription">Description:</label>
+      <input type="text" id="productDescription" name="productDescription" value="{{product.description}}">
+
+      <label for="productPrice">Price:</label>
+      <input type="text" id="productPrice" name="productPrice" value="{{product.price}}">
+
+      <label for="inHandStock">In Hand Stock:</label>
+      <input type="text" id="inHandStock" name="inHandStock" value="{{product.in_hand_stock}}">
+
+      <input type="hidden" id="categoryId" name="categoryId" value="{{product.category_id}}">
+      <input type="hidden" id="supplierId" name="supplierId" value="{{product.supplier_id}}">
+      <input type="hidden" id="productId" name="productId" value="{{product.id}}">
 
       <button type="submit">Save</button>
     </form>
