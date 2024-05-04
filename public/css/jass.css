@@ -188,22 +188,43 @@ ul{
     border-radius: 5px;
     cursor: pointer;
   }
+
+
   .dashboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 150vh; /* Adjust the height as needed */
+    height: 130vh; /* Adjust the height as needed */
     background-color: #F5DEB3;
     border-radius: 15px;
-    margin: 20px;
+    margin: 10px;
+    width: 70%;
+    border: 3px solid #A0522D;
 }
-
+.dash {
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between; /* Distribute space between items */
+}
 .search-container {
-    margin-bottom: 20px;
-    text-align: center;
-    margin-top: 30px;
+        background-color: white; /* Set the background color to white */
+        height: 70vh; /* Set the height to 150% of the viewport height */
+        width: 25%; /* Set the width to 25% of the viewport width */
+        padding: 10px; /* Add padding for spacing */
+        margin: 10px;
+        border: 3px solid #A0522D;
+        border-radius: 15px;
+        
+    }
+#searchbtninput{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
 }
-
+.search-container h2{
+    text-align: center;
+    margin-top: 50px; 
+}
 .search-input {
     padding: 8px;
     border: 1px solid #ccc;
@@ -224,7 +245,8 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 30px;
+    flex-direction: column;
 }
 
 .dashboard-btn {
@@ -237,6 +259,7 @@ ul{
     background-color: #A0522D;
     color: #fff;
     cursor: pointer;
+    margin-top: 20px;
 }
 .chart-container{
     margin-top: 50px;
@@ -256,22 +279,32 @@ ul{
 .product-name{
     text-decoration: underline;
     color: #8B4513;
+    font-size: 25px;
 
 }
 .product-name:hover{
-    font-size: 20px;
+    font-weight: 800;
 }
 li{
     list-style: none;
 }
 span{
     color: #A0522D;
+    font-size: 19px;
 }
 #low-quantity-products-container{
     margin-top: 30px;
     border: 3px solid #A0522D;
     padding: 15px;
+    width: 70%;
 }
+
+#low-quantity-products-container h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+
 
 
 
