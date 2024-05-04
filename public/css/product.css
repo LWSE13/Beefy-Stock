@@ -302,3 +302,10 @@ ul{
     width: 100%;
     margin-bottom: 10px;
 }
+
+#deleteProductbtn{
+    background-color: rgb(230, 6, 6);
+}
+#deleteProductbtn:hover{
+    background-color: rgb(199, 6, 6);
+}

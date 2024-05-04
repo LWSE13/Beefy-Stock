@@ -5,7 +5,7 @@
         <div class="supplier">
             <button id="editSupplierButton" class="button">Edit Supplier Details</button>
             <div class="supplier-edit">       
-                <h4>Supplier: {{product.supplier.supplier_name}}</h4>
+                <a href="/supplier/{{product.supplier.id}}">Supplier: {{product.supplier.supplier_name}}</a>
                 <h5 class="heading-indentation">Email: {{product.supplier.supplier_email}}</h5>
                 <h5 class="heading-indentation">Phone: {{product.supplier.supplier_phone}}</h5>
                 <h5 class="heading-indentation">Address: {{product.supplier.supplier_address}}</h5>
@@ -20,7 +20,7 @@
                 <h2 class="price">£{{product.price}}</h2>
             </div>
             <div class="main-product-headings">
-            <h4 class="heading-indentation">Category:  <a href=""> {{product.category.category_name}} </a> </h4>
+            <h4 class="heading-indentation">Category:  <a href="/category/{{product.category.id}}"> {{product.category.category_name}} </a> </h4>
             <h4 class="price">Stock Level: {{product.in_hand_stock}}</h4>
             </div>
         </div>
@@ -31,6 +31,7 @@
         </div>
         <div class="product-details-btn">
             <button id="editProductButton" class="button">Edit Product Details</button>
+            <button id="deleteProductbtn" class="button">Delete Product</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,24 @@
+{{#if allSuppliers}}
+    <h1>All Suppliers</h1>
+    {{else}}
+    <h1>All Categories</h1>
+    {{/if}}
+
+        {{#each allSuppliers}}
+            
+                <div>
+                    <a href="/supplier/{{this.id}}">
+                        <h2 class='search_headings'>{{this.supplier_name}}</h2>
+                    </a>
+                    <p>Email: {{this.supplier_email}}<br>Phone number: {{this.supplier_phone}}</p>
+                </div>
+        {{/each}}
+
+{{#each allCategories}}
+
+        <div>
+            <a href="/category/{{this.id}}">
+                <h2 class='search_headings'>{{this.category_name}}</h2>
+            </a>
+        </div>
+{{/each}}

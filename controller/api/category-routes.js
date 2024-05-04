@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The `/api/categories` endpoint
 
-router.get('/', async (req, res) => {
+router.get('/',withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll({
       include: {
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: {
@@ -37,7 +38,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth,  async (req, res) => {
   try {
     const categoryData = await Category.create({
       category_name: req.body.category_name
@@ -49,7 +50,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.update(req.body, {
       where: {
@@ -67,7 +68,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth,  async (req, res) => {
   try {
     const categoryData = await Category.destroy({
       where: {

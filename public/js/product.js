@@ -108,4 +108,31 @@ $(document).ready(function() {
           console.error('Error:', error);
         });
       });
-  }); 
+  });
+  $(document).ready(function() {
+    $('#deleteProductbtn').click(function() {
+        // Get the product ID you want to delete
+        var productId = $('#productId').val(); 
+        
+        // Confirm with the user before deleting the product
+        if (confirm("Are you sure you want to delete this product?")) {
+            // Send a DELETE request to the backend API to delete the product
+            fetch('/api/products/' + productId, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to delete product');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Product deleted successfully');
+                window.location.href = '/'; 
+            })
+            .catch(error => {
+                console.error('Error deleting product:', error);
+            });
+        }
+    });
+});
