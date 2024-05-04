@@ -1,0 +1,36 @@
+{{#if supplier}}
+<div class="supplier-categories-container">
+    <h1>{{supplier.supplier_name}}</h1>
+    <div class="contact-details">
+        <h3>Contact details</h3>
+        <p>Email: {{supplier.supplier_email}}<br>Phone: {{supplier.supplier_phone}}<br>Address: {{supplier.supplier_address}}</p>
+    </div>
+    <div class="supplier-products">
+        <h2>Products provided by {{supplier.supplier_name}}:</h2>
+        <ul>
+             {{#each supplier.products}}
+                <li>
+                    <a href="/products/{{this.id}}" class="product-name">{{this.product_name}}</a>
+                    <span>Quantity: {{this.in_hand_stock}}</span>
+                    <!-- Add more product details if needed -->
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{else}}
+<div class="supplier-categories-container">
+    <h1>{{category.category_name}}</h1>
+    <div class="category-products">
+        <h2>List of all {{category.category_name}}</h2>
+        <ul>
+            {{#each category.products}}
+                <li>
+                    <a href="/products/{{this.id}}" class="product-name">{{this.product_name}}</a>
+                    <span>Quantity: {{this.in_hand_stock}}</span>                    
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/if}}

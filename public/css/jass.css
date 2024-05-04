@@ -348,3 +348,14 @@ span{
     width: 100%;
     margin-bottom: 10px;
 }
+.supplier-categories-container{
+    margin: 30px;
+    background-color: #F5DEB3;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+.supplier-categories-container h1{
+    color: #A0522D;
+}

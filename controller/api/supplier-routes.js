@@ -12,8 +12,9 @@ router.get('/', withAuth, async (req, res) => {
         attributes: ['product_name']
       }
     });
-
+    
     res.status(200).json(supplierData);
+    
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'An error occurred while fetching suppliers', error: err.message });
@@ -35,8 +36,8 @@ router.get('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No supplier found with this id!' });
       return;
     }
-
     res.status(200).json(supplierData);
+   
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'An error occurred while fetching the supplier', error: err.message });
