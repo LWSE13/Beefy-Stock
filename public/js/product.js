@@ -109,8 +109,6 @@ $(document).ready(function() {
         });
       });
   });
-
-
   $(document).ready(function() {
     $('#deleteProductbtn').click(function() {
         // Get the product ID you want to delete
