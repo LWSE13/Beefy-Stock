@@ -1,0 +1,62 @@
+<h1>All Products</h1>
+<button id="add-productsbtn">Add New Product</button>
+<div id="addproducstModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <form id="addproductForm">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" value="{{product.product_name}}">
+
+      <label for="productDescription">Description:</label>
+      <input type="text" id="productDescription" name="productDescription" value="{{product.description}}">
+
+      <label for="productPrice">Price:</label>
+      <input type="text" id="productPrice" name="productPrice" value="{{product.price}}">
+
+      <label for="inHandStock">In Hand Stock:</label>
+      <input type="text" id="inHandStock" name="inHandStock" value="{{product.in_hand_stock}}">
+
+     
+
+      <label for="categoryDropdown">Category:</label>
+      <select id="categoryDropdown" name="categoryId">
+         
+        <option value="new">Create a new category</option>
+      </select>
+
+      <div id="newCategoryFields">
+        <label for="newCategoryName">New Category Name:</label>
+        <input type="text" id="newCategoryName" name="newCategoryName">
+      </div>
+
+      <label for="suppliersDropdown">Supplier:</label>
+      <select id="suppliersDropdown" name="suppliersId">
+         
+        <option value="new">Add a new supplier</option>
+      </select>
+
+      <div id="newsupplierFields">
+        <label for="newsupplierName">Supplier Name:</label>
+        <input type="text" id="newsupplierName" name="newsupplierName">
+        <label for="newsupplierAddress">Supplier Address:</label>
+        <input type="text" id="newsupplierAddress" name="newsupplierAddress">
+        <label for="newsupplierPhone">Supplier Phone Number:</label>
+        <input type="text" id="newsupplierPhone" name="newsupplierPhone">
+        <label for="newsupplierEmail">Supplier Email Address:</label>
+        <input type="text" id="newsupplierEmail" name="newsupplierEmail">
+      </div>      
+
+      <button type="submit">Save</button>
+    </form>
+
+  </div>
+</div>
+{{#each allproducts}}
+    <div>
+        <a href="/products/{{this.id}}">
+            <h2 class = 'search_headings'>{{this.product_name}}</h2>
+        </a>
+        <p>{{this.description}}</p>
+    </div>
+{{/each}}

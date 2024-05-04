@@ -1,9 +1,9 @@
 //supplier routes
 const router = require('express').Router();
 const { Supplier, Product } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 //get all suppliers
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
   try {
     const supplierData = await Supplier.findAll({
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 //get one supplier
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
 
   try {
     const supplierData = await Supplier.findByPk(req.params.id, {
@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //create a new supplier
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
 
   try {
     const supplierData = await Supplier.create(req.body);
@@ -57,7 +57,7 @@ router.post('/', async (req, res) => {
 });
 
 //update a supplier
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
 
   try {
     const supplierData = await Supplier.update(req.body, {
@@ -79,7 +79,7 @@ router.put('/:id', async (req, res) => {
 });
 
 //delete a supplier
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
 
   try {
     const supplierData = await Supplier.findByPk(req.params.id);

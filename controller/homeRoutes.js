@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-  router.get('/search', async (req, res) => {
+  router.get('/search', withAuth, async (req, res) => {
     const searchQuery = req.query.productSearch;
     const products = await Product.findAll({
       where: {
@@ -107,5 +107,18 @@ router.get('/', (req, res) => {
       res.status(500).json({ error: 'Something went wrong!' });
     }
   });
+  router.get('/products', withAuth, async (req, res) => {
+    try {
+      const allproducts = await Product.findAll();
+      res.render('allproducts', {
+        allproducts: allproducts.map(product => product.get({ plain: true })),
+        loggedIn: req.session.loggedIn,
+        name: req.session.name
+       });
 
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      res.status(500).json({ error: 'An error occurred while fetching products' });
+    }     
+  });
   module.exports = router;

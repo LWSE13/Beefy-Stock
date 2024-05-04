@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [
@@ -56,7 +56,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newProduct = await Product.create(req.body);
     res.status(200).json(newProduct);
@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const productData = await Product.update(req.body, {
       where: {
@@ -86,7 +86,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id);
 

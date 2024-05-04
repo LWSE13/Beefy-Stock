@@ -3,9 +3,10 @@
 const router = require('express').Router();
 const { Op } = require('sequelize');
 const { Product, Supplier } = require('../../models'); // Import your Product and Supplier models
+const withAuth = require('../../utils/auth');
 
 // Route to fetch low quantity products
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Query the database to find products with low quantities, including supplier information
     const lowQuantityProducts = await Product.findAll({ 
