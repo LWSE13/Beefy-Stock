@@ -359,3 +359,38 @@ span{
 .supplier-categories-container h1{
     color: #A0522D;
 }
+
+.search-form {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 500px; /* Adjust as needed */
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+}
+
+.search-btn {
+    border: none;
+    color: white; 
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+    transition-duration: 0.4s; 
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #855312; 
+}
+
+#logout {
+    height: 70%;
+    margin-top: 11px;
+    margin-left: 5px;
+}

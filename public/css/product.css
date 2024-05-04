@@ -218,7 +218,8 @@ ul{
 .product-description {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    line-height: 1.5;
 }
 
 #supplierModal {
