@@ -310,3 +310,12 @@ ul{
 #deleteProductbtn:hover{
     background-color: rgb(199, 6, 6);
 }
+
+.product-name {
+    padding: 15px;
+    width: 200px;
+    height: 100px;
+    background: white;
+    border-radius: 100px / 50px;
+
+}

@@ -23,7 +23,7 @@
         <h2>Low Quantity Products</h2>
         <ul>
             {{#each lowQuantityProducts}}
-            <li>
+            <li class="list">
                 <a class="product-name" href="/products/{{this.id}}">{{this.product_name}}</a>
                 <span class="product-quantity">Quantity left: {{this.in_hand_stock}}</span>
                 

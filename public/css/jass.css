@@ -194,7 +194,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 130vh; /* Adjust the height as needed */
+    height: 175vh; /* Adjust the height as needed */
     background-color: #F5DEB3;
     border-radius: 15px;
     margin: 10px;
@@ -290,6 +290,7 @@ ul{
 }
 li{
     list-style: none;
+    margin: 50px;
 }
 span{
     color: #A0522D;
