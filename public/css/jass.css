@@ -270,10 +270,13 @@ ul{
     width: 80%;
 }
 .chart{
+    display: flex;
+    justify-content: center;
     width: 80%;
     height: 50vh;
-    border: 3px solid white;
+    border: 3px solid gray;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 .product-name{
@@ -364,7 +367,7 @@ span{
     display: flex;
     border-radius: 25px;
     overflow: hidden;
-    width: 500px; /* Adjust as needed */
+    width: 500px;
 }
 
 .search-input {

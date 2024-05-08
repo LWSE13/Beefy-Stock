@@ -33,7 +33,6 @@ router.get('/', (req, res) => {
         }
       }
     });
-    console.log(products);
     res.render('search', { 
       products: products.map(product => product.get({ plain: true })),
       loggedIn: req.session.loggedIn,

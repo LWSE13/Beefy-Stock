@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 // The `/api/products` endpoint
 
 // get all products
-router.get('/', withAuth, async (req, res) => {
+router.get('/data', async (req, res) => {
   try {
     
       // Fetch all products
