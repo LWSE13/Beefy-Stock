@@ -48,7 +48,7 @@ const renderLowQuantityProducts = (lowQuantityProducts) => {
 //product chart
 async function createChart() {
   try {
-    // fetch my data
+    // fetch data from my product api endpoint
     let response = await fetch('/api/products/data');
     let data = await response.json();
     //reduce function to group products by category and assign any new category to an empty array
