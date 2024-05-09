@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // The `/api/categories` endpoint
 
-router.get('/data', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.findAll({
       include: {

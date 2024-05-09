@@ -20,7 +20,11 @@ const fetchLowQuantityProducts = async () => {
 };
 
 // Call the fetchLowQuantityProducts function when the page loads
-window.addEventListener('load', fetchLowQuantityProducts);
+window.addEventListener('load', () => {
+  if (window.location.pathname === '/dashboard') {
+    fetchLowQuantityProducts();
+  }
+});
 
 const renderLowQuantityProducts = (lowQuantityProducts) => {
   const lowQuantityProductsContainer = document.getElementById('low-quantity-products-container');
@@ -45,28 +49,30 @@ const renderLowQuantityProducts = (lowQuantityProducts) => {
 async function createChart() {
   try {
     // fetch my data
-      let response = await fetch('/api/products/data');
-      let data = await response.json();
-      //reduce function to group products by category and assign any new category to an empty array
-      let productsByCategory = data.reduce((groups, product) => {
-          // assigns the category of each product to a category variable
-          let category = product.category.category_name;
-          // if the category does not exist, create an empty array
-          if (!groups[category]) {
-              groups[category] = [];
-          }
-          //pushes products that belong to the same category into the same array and finally returns the groups variable
-          groups[category].push(product);
-          return groups;
-      }, {});
-      //gets all the keys (in this case categories of the products) and assigns them to a variable called categories
-      let categories = Object.keys(productsByCategory);
-      //maps through the categories and assigns the total stock of each category to a variable called inventory
-      let inventory = categories.map(category => 
-          productsByCategory[category].reduce((total, product) => total + product.in_hand_stock, 0)
-      );
+    let response = await fetch('/api/products/data');
+    let data = await response.json();
+    //reduce function to group products by category and assign any new category to an empty array
+    let productsByCategory = data.reduce((groups, product) => {
+        // assigns the category of each product to a category variable
+        let category = product.category.category_name;
+        // if the category does not exist, create an empty array
+        if (!groups[category]) {
+            groups[category] = [];
+        }
+        //pushes products that belong to the same category into the same array and finally returns the groups variable
+        groups[category].push(product);
+        return groups;
+    }, {});
+    //gets all the keys (in this case categories of the products) and assigns them to a variable called categories
+    let categories = Object.keys(productsByCategory);
+    //maps through the categories and assigns the total stock of each category to a variable called inventory
+    let inventory = categories.map(category => 
+        productsByCategory[category].reduce((total, product) => total + product.in_hand_stock, 0)
+    );
 
-      let ctx = document.getElementById('productChart').getContext('2d');
+    var chartCheck = document.getElementById('productChart');
+    if (chartCheck) {
+      let ctx = chartCheck.getContext('2d');
       let productChart = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -80,7 +86,6 @@ async function createChart() {
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
                     'rgba(255, 159, 64, 0.2)',
-
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -108,9 +113,9 @@ async function createChart() {
               }
           }
       });
+    }
   } catch (error) {
       console.error('Error:', error);
   }
 }
-
 createChart();
