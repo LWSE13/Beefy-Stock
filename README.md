@@ -20,6 +20,12 @@ Visit the link here to view our website: https://beefy-stock.onrender.com/
 
 ## Usage
 Once you have the website open simply create an account and you will be greeted with an empty dashboard. From there you can begin to add products through our view all products section and watch the site come to life with in depth product views and fancy pie charts
+![welcome](public/images/homepage.png)
+
+![dashboard](public/images/dashboard.png)
+
+![add-product](public/images/add-p.png)
+
 
 ## Credits
 @Ali-mo12001: https://github.com/Ali-mo12002
