@@ -194,7 +194,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 175vh; /* Adjust the height as needed */
+    height: 130vh;
     background-color: #F5DEB3;
     border-radius: 15px;
     margin: 10px;
@@ -524,6 +524,8 @@ footer {
 
 ul{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .useful-fields ul li a:hover {
@@ -679,18 +681,10 @@ ul{
     background-color: #fff;
 }
 
-.product-name{
-    text-decoration: underline;
-    color: #8B4513;
-    font-size: 25px;
 
-}
-.product-name:hover{
-    font-weight: 800;
-}
-li{
-    list-style: none;
-    margin: 50px;
+li {
+    margin:10px;
+    width: 100%;
 }
 span{
     color: #A0522D;
@@ -701,6 +695,7 @@ span{
     border: 3px solid #A0522D;
     padding: 15px;
     width: 70%;
+    background-color: #fff;
 }
 
 #low-quantity-products-container h2{
@@ -865,10 +860,11 @@ span{
 }
 @media (max-width: 495px){
     li{
-        margin: 50px 0;
+        margin: 10px 0;
     }
     .dashboard-container{
         width: auto;
         height: 180vh;
     }
 }
+
