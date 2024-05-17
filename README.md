@@ -18,6 +18,8 @@ Chart.js: This acted as our new experimental technology. It’s a framework that
 ## Installation
 Visit the link here to view our website: https://beefy-stock.onrender.com/
 
+Sometimes the link may not work as I use the database for another project. In this case the repo is able to be cloned and a postgres database created. You can find the commands for seeding the database and running the server within the package.json file
+
 ## Usage
 Once you have the website open simply create an account and you will be greeted with an empty dashboard. From there you can begin to add products through our view all products section and watch the site come to life with in depth product views and fancy pie charts
 ![welcome](public/images/homepage.png)
